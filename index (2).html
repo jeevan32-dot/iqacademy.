@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IQ Academy – Tuition centre in Choolaimedu, Chennai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f5fb;--grid:rgba(20,33,61,.07);--ink:#14213d;--mute:#4a5775;
+  --panel:rgba(255,255,255,.82);--line:rgba(20,33,61,.16);--accent:#2f4bff;--pencil:#ffc933;--on-accent:#fff;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1226;--grid:rgba(160,180,255,.08);--ink:#eef1ff;--mute:#a9b4d6;
+  --panel:rgba(18,26,52,.82);--line:rgba(160,180,255,.22);--accent:#7d93ff;--pencil:#ffd24d;--on-accent:#0c1226;}}
+:root[data-theme="dark"]{
+  --bg:#0c1226;--grid:rgba(160,180,255,.08);--ink:#eef1ff;--mute:#a9b4d6;
+  --panel:rgba(18,26,52,.82);--line:rgba(160,180,255,.22);--accent:#7d93ff;--pencil:#ffd24d;--on-accent:#0c1226;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:40px 40px;overflow-x:hidden}
+#stage{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,header,footer{position:relative;z-index:1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+header.nav{display:flex;justify-content:space-between;align-items:center;padding:20px clamp(20px,5vw,64px)}
+.logo{font-weight:800;font-size:1.3rem;letter-spacing:-.02em;text-decoration:none}
+.logo b{background:var(--pencil);color:#14213d;padding:0 .3em;border-radius:6px;margin-right:.15em}
+.nav a.call{font-weight:600;text-decoration:none;border:1.5px solid var(--line);padding:.45em 1em;border-radius:99px;background:var(--panel)}
+.hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(20px,5vw,64px) 40px;max-width:1200px}
+h1{font-size:clamp(2.6rem,7.5vw,6rem);line-height:.98;letter-spacing:-.035em;font-weight:800;margin:0 0 .4em;max-width:11ch}
+.lead{max-width:34rem;color:var(--mute);font-size:1.2rem;margin:0 0 1.6em}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-block;font-weight:600;text-decoration:none;padding:.85em 1.5em;border-radius:12px;background:var(--accent);color:var(--on-accent);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:var(--panel);color:var(--ink);border:1.5px solid var(--line)}
+.rating{margin-top:2rem;display:flex;align-items:baseline;gap:.6rem;color:var(--mute)}
+.rating strong{font-size:2.4rem;color:var(--ink);letter-spacing:-.03em}
+section{padding:72px clamp(20px,5vw,64px);max-width:1200px}
+h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 .5em;max-width:18ch}
+.traits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px}
+.trait{background:var(--panel);border:1.5px solid var(--line);border-radius:16px;padding:22px;backdrop-filter:blur(6px)}
+.trait h3{margin:0 0 .3em;font-size:1.15rem}
+.trait p{margin:0;color:var(--mute);font-size:.98rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:28px;perspective:1000px}
+.card{background:var(--panel);border:1.5px solid var(--line);border-radius:18px;padding:26px;transform-style:preserve-3d;transition:transform .15s ease-out;backdrop-filter:blur(6px);will-change:transform}
+.card q{display:block;quotes:"“" "”";font-size:1.08rem;transform:translateZ(30px)}
+.card cite{display:block;margin-top:1rem;font-style:normal;font-weight:600;color:var(--mute);transform:translateZ(18px)}
+.stars{color:var(--pencil);letter-spacing:.1em;margin-bottom:.6rem;transform:translateZ(40px);-webkit-text-stroke:.5px rgba(20,33,61,.4)}
+.visit{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;background:var(--panel);border:1.5px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,44px);backdrop-filter:blur(6px)}
+.visit dl{margin:0}.visit dt{font-weight:600;color:var(--mute);font-size:.9rem;margin-top:1rem}.visit dd{margin:0;font-size:1.15rem}
+.visit dt:first-child{margin-top:0}
+footer{padding:36px clamp(20px,5vw,64px) 56px;color:var(--mute);font-size:.92rem}
+dialog{border:1.5px solid var(--line);border-radius:20px;background:var(--bg);color:var(--ink);padding:28px;max-width:340px;width:calc(100% - 40px);text-align:center}
+dialog::backdrop{background:rgba(10,15,35,.55)}
+dialog h3{margin:0 0 .2em;font-size:1.3rem}
+dialog p{margin:0 0 1rem;color:var(--mute)}
+#num{width:100%;font:800 1.6rem "Bricolage Grotesque",system-ui,sans-serif;text-align:center;border:1.5px solid var(--line);border-radius:12px;padding:.5em;background:var(--panel);color:var(--ink);margin-bottom:14px}
+dialog .row{justify-content:center}
+dialog button.btn{border:0;font:inherit;font-weight:600;cursor:pointer}
+dialog button.alt{border:1.5px solid var(--line)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="stage" aria-hidden="true"></canvas>
+<header class="nav">
+  <a class="logo" href="#top"><b>IQ</b>Academy</a>
+  <a class="call" data-call href="tel:+916338761586" target="_top">Call 063387 61586</a>
+</header>
+<main id="top">
+  <div class="hero">
+    <h1>Learn it clearly. Ace the exam.</h1>
+    <p class="lead">IQ Academy is a friendly tuition centre in Choolaimedu, Chennai, where patient teachers explain maths until it makes sense.</p>
+    <div class="row">
+      <a class="btn" data-call href="tel:+916338761586" target="_top">Call the centre</a>
+      <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=IQ+Academy+Choolaimedu+Chennai" target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <div class="rating"><strong>4.9</strong><span>average from 20 Google reviews</span></div>
+  </div>
+
+  <section aria-labelledby="why">
+    <h2 id="why">What students and parents notice</h2>
+    <div class="traits">
+      <div class="trait"><h3>Clear maths teaching</h3><p>Concepts are explained step by step, so they are easy to follow.</p></div>
+      <div class="trait"><h3>Help when exams come</h3><p>Reviewers say the lessons were very helpful during exam time.</p></div>
+      <div class="trait"><h3>Calm, friendly teachers</h3><p>Patient teachers who are ready to clear every doubt.</p></div>
+      <div class="trait"><h3>A clean, pleasant space</h3><p>A tidy learning environment that is easy to focus in.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="rev">
+    <h2 id="rev">In their words</h2>
+    <div class="cards">
+      <article class="card"><div class="stars" aria-label="5 stars">★★★★★</div><q>Excellent tuition centre! The teaching is very clear and easy to understand.</q><cite>Naveeen Kumar</cite></article>
+      <article class="card"><div class="stars" aria-label="5 stars">★★★★★</div><q>Very nice tuition center with a clean and pleasant learning environment. Overall, a great place for students to learn.</q><cite>Mariya M</cite></article>
+      <article class="card"><div class="stars" aria-label="5 stars">★★★★★</div><q>Teach maths very good, very helpful during exam.</q><cite>kamal kannan</cite></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="visit">
+    <h2 id="visit">Visit IQ Academy</h2>
+    <div class="visit">
+      <dl>
+        <dt>Address</dt><dd>2/15, Officers Colony 3rd St, Easwar Nagar, Choolaimedu, Chennai, Tamil Nadu 600024</dd>
+        <dt>Phone</dt><dd><a data-call href="tel:+916338761586" target="_top">063387 61586</a></dd>
+        <dt>Hours</dt><dd>Open daily until 8 pm</dd>
+      </dl>
+      <div class="row" style="align-content:center">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=IQ+Academy+Choolaimedu+Chennai" target="_blank" rel="noopener">Open in Google Maps</a>
+        <a class="btn alt" data-call href="tel:+916338761586" target="_top">Call to enrol</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© IQ Academy, Choolaimedu, Chennai. Ratings and reviews are from Google Maps.</footer>
+
+<dialog id="calldlg" aria-labelledby="calltitle">
+  <h3 id="calltitle">Call IQ Academy</h3>
+  <p>Open daily until 8 pm</p>
+  <input id="num" value="063387 61586" readonly aria-label="Phone number">
+  <div class="row">
+    <a class="btn" href="tel:+916338761586" target="_top">Open phone app</a>
+    <button class="btn alt" id="copybtn" type="button">Copy number</button>
+    <button class="btn alt" id="closebtn" type="button">Close</button>
+  </div>
+</dialog>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // 3D scene: floating geometry solids that react to pointer and scroll
+  try{
+    if(!window.THREE) return;
+    var canvas = document.getElementById("stage");
+    var renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(45,1,0.1,100);
+    camera.position.set(0,0,14);
+    var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var pal = dark ? [0x7d93ff,0xffd24d,0x5fd6c4,0xff8fa3,0xb9a8ff] : [0x2f4bff,0xffc933,0x15a58f,0xf0556e,0x6a4cff];
+    scene.add(new THREE.AmbientLight(0xffffff, dark?0.55:0.75));
+    var key = new THREE.DirectionalLight(0xffffff, 0.9); key.position.set(5,8,10); scene.add(key);
+
+    var defs = [
+      [new THREE.IcosahedronGeometry(2.3,0), 0, 3.4, 0.4, 0],
+      [new THREE.OctahedronGeometry(1,0), 1, -4.6, 2.6, -2],
+      [new THREE.BoxGeometry(1.4,1.4,1.4), 2, -5.2, -2.4, -1],
+      [new THREE.TetrahedronGeometry(1.2,0), 3, 6.4, -3.2, -2],
+      [new THREE.DodecahedronGeometry(1,0), 4, 0.5, 4, -4],
+      [new THREE.TorusGeometry(0.9,0.28,12,40), 1, -1.5, -4, -3]
+    ];
+    var group = new THREE.Group(); scene.add(group);
+    var meshes = defs.map(function(d,i){
+      var m = new THREE.Mesh(d[0], new THREE.MeshStandardMaterial({color:pal[d[1]], flatShading:true, roughness:0.55, metalness:0.1, transparent:true, opacity:0.92}));
+      var edges = new THREE.LineSegments(new THREE.EdgesGeometry(d[0]), new THREE.LineBasicMaterial({color: dark?0xeef1ff:0x14213d}));
+      m.add(edges); m.position.set(d[2],d[3],d[4]); m.userData = {base:d[3], i:i}; group.add(m); return m;
+    });
+
+    var mx=0,my=0,sy=0,w=0,h=0;
+    function size(){
+      w=innerWidth; h=innerHeight; renderer.setSize(w,h,false); camera.aspect=w/h;
+      var narrow = w<760; group.scale.setScalar(narrow?0.6:1); group.position.x = narrow?0:0.8;
+      camera.updateProjectionMatrix(); draw(0);
+    }
+    function draw(t){
+      meshes.forEach(function(m){
+        var s=m.userData.i+1;
+        if(!reduce){ m.rotation.x = t*0.0003*s; m.rotation.y = t*0.0004*(s%3+1);
+          m.position.y = m.userData.base + Math.sin(t*0.001+s)*0.35; }
+      });
+      group.rotation.y += ((mx*0.4) - group.rotation.y)*0.05;
+      group.rotation.x += ((-my*0.25 + sy*0.0004) - group.rotation.x)*0.05;
+      camera.position.y = -sy*0.004;
+      renderer.render(scene,camera);
+    }
+    function loop(t){ draw(t); requestAnimationFrame(loop); }
+    addEventListener("pointermove",function(e){ mx=e.clientX/innerWidth-0.5; my=e.clientY/innerHeight-0.5; });
+    addEventListener("scroll",function(){ sy=scrollY; if(reduce) draw(0); },{passive:true});
+    addEventListener("resize",size);
+    size();
+    if(!reduce) requestAnimationFrame(loop);
+  }catch(e){ /* page works without the 3D scene */ }
+})();
+
+// Call buttons: tel: links are often blocked inside embedded pages and do nothing on desktops, so show the number with copy and open options
+(function(){
+  var dlg=document.getElementById("calldlg"), num=document.getElementById("num"), cb=document.getElementById("copybtn");
+  document.querySelectorAll("[data-call]").forEach(function(a){
+    a.addEventListener("click",function(e){
+      e.preventDefault();
+      if(dlg.showModal){ dlg.showModal(); } else { dlg.setAttribute("open",""); }
+      cb.textContent="Copy number";
+    });
+  });
+  cb.addEventListener("click",function(){
+    num.focus(); num.select();
+    var ok=false;
+    try{ ok=document.execCommand("copy"); }catch(e){}
+    if(!ok && navigator.clipboard){ navigator.clipboard.writeText("06338761586").then(function(){cb.textContent="Copied";},function(){}); }
+    cb.textContent = ok ? "Copied" : "Number selected, press copy";
+  });
+  document.getElementById("closebtn").addEventListener("click",function(){ dlg.close(); });
+})();
+
+// 3D tilt on review cards
+(function(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll(".card").forEach(function(c){
+    c.addEventListener("pointermove",function(e){
+      var r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-0.5, y=(e.clientY-r.top)/r.height-0.5;
+      c.style.transform="rotateY("+(x*16)+"deg) rotateX("+(-y*16)+"deg)";
+    });
+    c.addEventListener("pointerleave",function(){ c.style.transform=""; });
+  });
+})();
+</script>
+</body>
+</html>
